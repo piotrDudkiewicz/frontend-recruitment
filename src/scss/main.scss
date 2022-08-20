@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
   font-size: 100%;
+  font-family: "Roboto";
 }
 
 *,
@@ -15,11 +16,24 @@ main {
   margin-top: 80px;
 }
 
+button {
+  padding: 16px 40px;
+  background: #e4c1ae;
+  border-radius: 32px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  color: #ffffff;
+  cursor: pointer;
+}
+
 .module {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-style: normal;
+  margin-bottom: 25px;
 
   & > * {
     padding: 0 20px;
@@ -27,8 +41,6 @@ main {
   }
 
   h1 {
-    font-family: "Roboto";
-    font-style: normal;
     font-weight: 700;
     font-size: 42px;
     line-height: 120%;
@@ -36,8 +48,6 @@ main {
   }
 
   p {
-    font-family: "Roboto";
-    font-style: normal;
     font-weight: 300;
     font-size: 16px;
     line-height: 150%;
@@ -46,22 +56,107 @@ main {
     margin-bottom: 20px;
   }
 
-  img{
+  img {
     max-width: 100%;
     max-height: 100%;
     position: relative;
     object-fit: contain;
   }
+}
 
-  button {
-    padding: 16px 40px;
-    background: #e4c1ae;
-    border-radius: 32px;
+.popup {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 18, 18, 0.6);
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+
+  .reset {
+    display: flex;
+  }
+
+  .buttonContainer {
+    padding: 15px 0;
+  }
+
+  & > div {
+    position: absolute;
+    width: 50%;
+    max-height: 500px;
+    padding: 2% 5%;
+
+    .close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+
+      &::after,
+      &::before {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 2px;
+        height: 20px;
+        background-color: #000000;
+        transform-origin: top left;
+        content: "";
+      }
+
+      &::after {
+        transform: rotate(-45deg) translate(-50%, -50%);
+      }
+
+      &::before {
+        transform: rotate(45deg) translate(-50%, -50%);
+      }
+    }
+  }
+
+  h2,
+  span {
+    font-style: normal;
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 120%;
+    color: #121212;
+  }
+
+  span {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 150%;
+    color: #121212;
+  }
+
+  div {
+    background: #ffffff;
+    opacity: 1;
   }
 }
 
-@media  screen and (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .module {
     flex-direction: column;
+  }
+
+  .popup > div {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .popup>div {
+    width: 100%;
   }
 }
