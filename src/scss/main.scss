@@ -27,43 +27,6 @@ button {
   cursor: pointer;
 }
 
-.module {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-style: normal;
-  margin-bottom: 25px;
-
-  & > * {
-    padding: 0 20px;
-    flex: 1;
-  }
-
-  h1 {
-    font-weight: 700;
-    font-size: 42px;
-    line-height: 120%;
-    color: #121212;
-  }
-
-  p {
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 150%;
-    color: #121212;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-
-  img {
-    max-width: 100%;
-    max-height: 100%;
-    position: relative;
-    object-fit: contain;
-  }
-}
-
 .popup {
   position: fixed;
   display: none;
@@ -146,10 +109,6 @@ button {
 }
 
 @media screen and (max-width: 900px) {
-  .module {
-    flex-direction: column;
-  }
-
   .popup > div {
     width: 80%;
   }

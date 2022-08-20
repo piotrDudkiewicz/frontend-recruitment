@@ -2,6 +2,7 @@ const template = document.createElement("template");
 template.innerHTML = `
 <style>
 @import "dist/main.css";
+@import "dist/card.css";
 </style>
 <section class="module">
     <div>
