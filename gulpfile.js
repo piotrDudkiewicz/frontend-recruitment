@@ -15,14 +15,11 @@ const files = {
     jsPath: 'src/js/**/*.js'
 };
 
-function scssTask(){    
-    return src(files.scssPath)
-        .pipe(sourcemaps.init()) // initialize sourcemaps first
-        .pipe(sass([])) // compile SCSS to CSS
-        .pipe(postcss([ autoprefixer(), cssnano() ])) // PostCSS plugins
-        .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
-        .pipe(dest('dist')
-    ); // put final CSS in dist folder
+function scssTask() {   
+    return src(files.scssPath, { sourcemaps: true })
+      .pipe(sass())
+      .pipe(postcss([autoprefixer(), cssnano()]))
+      .pipe(dest("dist", { sourcemaps: "." })); // put final CSS in dist folder
 }
 
 function jsTask(){
